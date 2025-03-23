@@ -8,7 +8,6 @@ A sleek Node.js web application featuring a modern grayscale chat interface that
 - 💬 Real-time chat interface
 - 🔄 Webhook integration with N8N
 - 🤖 Gemini LLM-powered responses
-- ⚡ Express.js backend
 - 🔒 Environment variable configuration
 
 ## Prerequisites
@@ -22,8 +21,8 @@ A sleek Node.js web application featuring a modern grayscale chat interface that
 1. Clone the repository:
 
 ```bash
-git clone <your-repo-url>
-cd <your-repo-name>
+git clone https://github.com/warathepj/n8n-chatbot-gemini-nodejs-html.git
+cd n8n-chatbot-gemini-nodejs-html
 ```
 
 2. Install dependencies:
@@ -54,7 +53,7 @@ WEBHOOK_URL=your_n8n_webhook_url_here
 1. Start the server:
 
 ```bash
-npm start
+node index.js
 ```
 
 2. Open your browser and navigate to:
@@ -87,14 +86,6 @@ http://localhost:3000
 
 - `PORT`: Server port (default: 3000)
 - `WEBHOOK_URL`: N8N webhook URL for the Gemini workflow
-
-## Contributing
-
-1. Fork the repository
-2. Create your feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
-5. Open a Pull Request
 
 ## License
 
