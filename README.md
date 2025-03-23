@@ -1,46 +1,108 @@
-# Webhook Message Sender
+# Modern Grayscale Chatbot with N8N & Gemini Integration
 
-A simple Node.js application that sends messages to webhooks using Axios HTTP client.
+A sleek Node.js web application featuring a modern grayscale chat interface that connects to N8N workflows powered by Google's Gemini LLM for intelligent conversations.
 
 ## Features
 
-- Send POST requests to webhooks
-- Handle responses and errors
-- Uses Axios for HTTP requests
+- 🎨 Modern grayscale UI with responsive design
+- 💬 Real-time chat interface
+- 🔄 Webhook integration with N8N
+- 🤖 Gemini LLM-powered responses
+- ⚡ Express.js backend
+- 🔒 Environment variable configuration
+
+## Prerequisites
+
+- Node.js (v12 or higher)
+- N8N instance with Gemini integration
+- Webhook URL from your N8N workflow
 
 ## Installation
 
-1. Clone this repository
+1. Clone the repository:
+
+```bash
+git clone <your-repo-url>
+cd <your-repo-name>
+```
+
 2. Install dependencies:
+
 ```bash
 npm install
 ```
 
+3. Create a `.env` file in the root directory:
+
+```
+PORT=3000
+WEBHOOK_URL=your_n8n_webhook_url_here
+```
+
+## Configuration
+
+### N8N Webhook Setup
+
+1. Create a new workflow in N8N
+2. Add an HTTP Trigger node as your webhook entry point
+3. Configure Gemini LLM node in your workflow
+4. Connect the workflow to process incoming messages and return responses
+5. Copy the webhook URL and add it to your `.env` file
+
 ## Usage
 
-1. Update the webhook URL in `index.js` with your actual webhook endpoint:
-```javascript
-axios.post('your-webhook-url', {
-  message: 'what color of sea?'
-})
-```
+1. Start the server:
 
-2. Run the application:
 ```bash
-node index.js
+npm start
 ```
 
-## Dependencies
+2. Open your browser and navigate to:
 
-- [axios](https://github.com/axios/axios) - Promise based HTTP client for the browser and Node.js
+```
+http://localhost:3000
+```
 
-## Error Handling
+3. Start chatting with the Gemini-powered bot through the interface
 
-The application includes basic error handling for failed requests:
-- Successful responses are logged to the console
-- Errors are caught and logged with details
+## Project Structure
+
+```
+├── public/
+│   └── index.html      # Frontend chat interface
+├── index.js            # Express server and webhook handling
+├── .env                # Environment variables
+├── package.json        # Project dependencies
+└── README.md          # Project documentation
+```
+
+## API Endpoints
+
+- `POST /api/send-message`
+  - Accepts JSON payload with a `message` field
+  - Forwards message to N8N webhook
+  - Returns response from the Gemini LLM
+
+## Environment Variables
+
+- `PORT`: Server port (default: 3000)
+- `WEBHOOK_URL`: N8N webhook URL for the Gemini workflow
+
+## Contributing
+
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
 
 ## License
 
-MIT
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
+## Acknowledgments
+
+- [Express.js](https://expressjs.com/) - Web framework
+- [N8N](https://n8n.io/) - Workflow automation
+- [Google Gemini](https://deepmind.google/technologies/gemini/) - Large Language Model
+- [Axios](https://axios-http.com/) - HTTP client
